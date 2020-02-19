@@ -1,0 +1,6 @@
+{
+    "prefix": "Your Bot Prefix",
+    
+    "token_bot": "Your Discord Bot Token",
+    "youtube_api": "Your YouTube API Key"
+}

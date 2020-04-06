@@ -2,9 +2,8 @@ const Discord = require("discord.js")
 const fs = require("fs")
 const client = new Discord.Client()
 
-const settings = require ("./config/bot.json") //The bot connects using the configuration file
+const settings = require("./config/bot.json") //The bot connects using the configuration file
 
-const emotes = require ("./config/emojis.json") //The bot finds emojis
 
 const { Player } = require("discord-player"); //Create a new Player (Youtube API key is your Youtube Data v3 key)
 
@@ -13,7 +12,8 @@ const player = new Player(client, settings.youtube_api); //To easily access the 
 client.player = player;
 client.commands = new Discord.Collection();
 client.aliases =  new Discord.Collection();
-client.emotes = emotes;
+client.emotes = require("./config/emojis.json");
+client.colors = require("./config/colors.json");
 
 fs.readdir("./commands/", (err, files) => {
     //it will filter all the files in commands directory with extension .js

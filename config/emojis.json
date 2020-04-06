@@ -3,6 +3,7 @@
     "queue": "🎞️",
     "error": "❌",
     "success": "☑️",
+    "warning": "⚠️",
     "repeat": "🔁",
     "pause": "⏸️",
     "resume": "⏯️"

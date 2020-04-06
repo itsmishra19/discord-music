@@ -1,6 +1,9 @@
 {
-    "music": "🎵",
+    "music": "🎶 ",
     "queue": "🎞️",
     "error": "❌",
-    "success": "☑️"
+    "success": "☑️",
+    "repeat": "🔁",
+    "pause": "⏸️",
+    "resume": "⏯️"
 }

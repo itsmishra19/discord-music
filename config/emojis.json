@@ -6,5 +6,6 @@
     "warning": "⚠️",
     "repeat": "🔁",
     "pause": "⏸️",
-    "resume": "⏯️"
+    "resume": "⏯️",
+    "stop": "⏹️"
 }

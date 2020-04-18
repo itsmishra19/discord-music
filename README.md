@@ -4,7 +4,7 @@ Discord Music is an open-source Discord music bot!
 
 ## Discord Server
 
-If you have any issue feel free to contact me on Discord (https://discord.gg/VdNadk2)
+If you have any issue feel free to contact me on Discord (https://discord.gg/xuu6ytN)
 
 ## Installation
 

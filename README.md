@@ -2,6 +2,10 @@
 
 Discord Music is an open-source Discord music bot!
 
+## Discord Server
+
+If you have any issue feel free to contact me on Discord (https://discord.gg/VdNadk2)
+
 ## Installation
 
 Use the package manager [npm](https://npmjs.com) to install all the packages. Using `npm install`, will automatically install all the package needed. Make sure your node version is not below 12.

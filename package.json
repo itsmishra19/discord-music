@@ -12,11 +12,11 @@
   "dependencies": {
     "discord.js": "discordjs/discord.js",
     "simple-youtube-api": "^5.2.1",
-    "ytdl-core": "^1.0.7",
-    "node-opus": "^0.3.2",
-    "discord-player": "^1.3.8",
-    "fs": "^0.0.2"
-     },
+    "ytdl-core": "^2.1.0",
+    "discord-player": "^1.3.9",
+    "fs": "^0.0.2",
+    "@discordjs/opus": "^0.1.0"
+  },
   "repository": {
     "url": "https://github.com/hydraindia/discord-music"
   },

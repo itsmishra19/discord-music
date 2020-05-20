@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
     let song = await client.player.nowPlaying(message.guild.id);
 
-    message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.music} | Now Playing:\n${song.name}` }})
+    message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.music} | Now Playing:\n${song.name} by \`${song.requestedBy}\`` }})
 }
 
 module.exports.config = {

@@ -9,11 +9,11 @@ let playing = client.player.isPlaying(message.guild.id);
 
 if(playing){
     // Add the song to the queue
-    let song = await client.player.addToQueue(message.guild.id, queue);
+    let song = await client.player.addToQueue(message.guild.id, queue, message.author.id);
     message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.success} | ${song.name} Added to the queue!` }})
 } else {
     // Else, play the song
-    let song = await client.player.play(message.member.voice.channel, queue);
+    let song = await client.player.play(message.member.voice.channel, queue, message.author.id);
     message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.music} | Now Playing:\n${song.name}` }})
     song.queue.on('end', () => {
     message.channel.send({embed: {color: client.colors.warning, description: `${client.emotes.warning} | Queue completed, add some more songs to play!` }})

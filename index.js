@@ -2,18 +2,19 @@ const Discord = require("discord.js")
 const fs = require("fs")
 const client = new Discord.Client()
 
-const settings = require("./config/bot.json") //The bot connects using the configuration file
+const config = require("./config.js"); //The bot connects using the configuration file
 
 
 const { Player } = require("discord-player"); //Create a new Player (Youtube API key is your Youtube Data v3 key)
 
-const player = new Player(client, settings.youtube_api); //To easily access the player
+const player = new Player(client); //To easily access the player
 
 client.player = player;
 client.commands = new Discord.Collection();
 client.aliases =  new Discord.Collection();
-client.emotes = require("./config/emojis.json");
-client.colors = require("./config/colors.json");
+client.config = require('./config.js');
+client.emotes = client.config.emotes;
+client.colors = client.config.colors;
 
 fs.readdir("./commands/", (err, files) => {
     //it will filter all the files in commands directory with extension .js
@@ -45,18 +46,23 @@ client.on("ready", () => {
 });
 
 client.on('message', async message => {
-    
-    let prefix = settings.prefix
+  
+   if(!message.guild || message.author.bot) return;
         
-    let messageArray = message.content.split(" ")
-    let cmd = messageArray[0].toLowerCase();
-    let args = messageArray.slice(1);
-      
-      
-    if(!message.content.startsWith(prefix)) return;
-    let commandfile = client.commands.get(cmd.slice(prefix.length)) || client.commands.get(client.aliases.get(cmd.slice(prefix.length)))
-    if(commandfile) commandfile.run(client,message,args,prefix);   
+   if (message.content.indexOf(config.prefix) !== 0) return;
+
+   let args = message.content.slice(config.prefix.length).trim().split(" ");
+   const command = args.shift().toLowerCase();
+   const commandFile = client.commands.get(command) || client.commands.get(client.aliases.get(command));
+   
+   if(!commandFile) return;
+  
+   try {
+     commandFile.run(client, message, args, config.prefix);
+   } catch(e) {
+     return message.channel.send(`An error occured on ${command}:\n ${e.message}`)
+   }
         
 });
 
-client.login(settings.token_bot); //This is the heart of the bot
+client.login(config.token_bot); //This is the heart of the bot

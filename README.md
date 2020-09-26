@@ -14,6 +14,11 @@ Use the package manager [npm](https://npmjs.com) to install all the packages. Us
 npm install
 ```
 
+If you face any issues related to ffmpeg/avconv. Use:
+```bash
+npm install ffmpeg-static
+```
+
 ## Configuration
 
 Go and edit in config/bot.json, make changes below to use it!

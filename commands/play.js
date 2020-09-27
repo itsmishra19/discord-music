@@ -26,7 +26,6 @@ if(client.player.isPlaying(message.guild.id)){
     // Else, play the song
     let song = await client.player.play(message.member.voice.channel, track, message.member.user.tag);
     message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.music} | Now Playing:\n${song.name}` }})
-    console.log(song)
     client.player.getQueue(message.guild.id).on('end', () => {
     message.channel.send({embed: {color: client.colors.warning, description: `${client.emotes.warning} | Queue completed, add some more songs to play!` }})
     });

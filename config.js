@@ -1,12 +1,8 @@
 module.exports = {
-    "prefix": "!",
-    "token_bot": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    "inviteURI": "invite url for your bot",
-    "supportServer": "supportServer" //if any
-     "colors": {
-      "error": "0xFF0000",
-      "success": "0x00FF46",
-      "warning": "0xFFD100"
+    "prefix": "-",
+    "token_bot": "NzkwNzE5OTc4MjE5MjQxNTAy.X-EtXQ.smuNCyuH8YjoSzFrwLAJEDBRQJQ",
+    "inviteURI": "Contact @Azzam#0007",
+    "supportServer": "https://discord.gg/ckmnpWcR9f" //if any
     },
     "emotes": {
     "music": "🎶 ",

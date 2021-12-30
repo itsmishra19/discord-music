@@ -18,7 +18,11 @@ export class InteractionCreate extends BaseEvent {
                 const context = new CommandContext(interaction);
 
                 if (connectionChecking) {
-                    if (connectionChecking.memberInVoice && !interaction.member.voice.channelId) {
+                    const dispatcher = this.client.queue.get(interaction.guild.id);
+                    const memberVoiceChannelId = interaction.member.voice.channelId;
+                    const botVoiceChannelId = interaction.guild.me.voice.channelId;
+
+                    if (connectionChecking.memberInVoice && !memberVoiceChannelId) {
                         return interaction.reply({
                             embeds: [
                                 makeEmbed("error", "You must be in a voice channel to use this command!", true)
@@ -26,7 +30,7 @@ export class InteractionCreate extends BaseEvent {
                         });
                     }
 
-                    if (connectionChecking.dispatcherExists && !this.client.queue.has(interaction.guild.id)) {
+                    if (connectionChecking.dispatcherExists && !dispatcher) {
                         return interaction.reply({
                             embeds: [
                                 makeEmbed("error", "No dispatcher exists for this server", true)
@@ -34,10 +38,10 @@ export class InteractionCreate extends BaseEvent {
                         });
                     }
 
-                    if (connectionChecking.memberInSameVoice && interaction.member.voice.channelId !== this.client.queue.get(interaction.guild.id).voiceChannel.id) {
+                    if (connectionChecking.memberInSameVoice && dispatcher && memberVoiceChannelId === botVoiceChannelId) {
                         return interaction.reply({
                             embeds: [
-                                makeEmbed("error", "You must be in the same voice channel as me")
+                                makeEmbed("error", "You must be in the same voice channel as me!", true)
                             ]
                         });
                     }

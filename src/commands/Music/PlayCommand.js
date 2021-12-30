@@ -21,7 +21,7 @@ export class PlayCommand extends BaseCommand {
     }
 
     get connectionChecking() {
-        return { memberInVoice: true, dispatcherExists: false };
+        return { memberInVoice: true, dispatcherExists: false, memberInSameVoice: true };
     }
 
     async execute(ctx) {

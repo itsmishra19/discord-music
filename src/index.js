@@ -4,7 +4,7 @@ import { customError } from "./utils/customError.js";
 import { Intents } from "discord.js";
 
 const clientOptions = {
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS],
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES],
     retryLimit: 3
 };
 

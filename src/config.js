@@ -11,6 +11,6 @@ export const config = {
             resumable: true,
             resumableTimeout: 30
         },
-        servers: JSON.parse(process.env.NODE ?? [])
+        servers: JSON.parse(process.env.NODES ?? [])
     }
 };

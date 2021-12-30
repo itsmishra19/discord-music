@@ -13,6 +13,11 @@ export class InteractionCreate extends BaseEvent {
             const cmd = this.client.commands.find(c => c.meta.slash.name === interaction.commandName);
             interaction.guild.restTimestamp = Date.now();
             if (cmd) {
+                console.log(await this.client.queue.create({
+                    guild: interaction.guild,
+                    voiceChannel: interaction.member.voice.channel,
+                    channel: interaction.channel
+                }));
                 const context = new CommandContext(interaction);
                 await interaction.deferReply();
                 await cmd.execute(context);

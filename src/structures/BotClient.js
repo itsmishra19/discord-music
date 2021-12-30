@@ -5,7 +5,7 @@ import { Logger } from "../modules/Logger.js";
 import { CommandManager } from "../modules/CommandManager.js";
 import { EventManager } from "../modules/EventManager.js";
 import { DispatcherManager } from "../modules/DispatcherManager.js";
-import { Shoukaku } from "./Shoukaku.js";
+import { ShoukakuHandler } from "./Shoukaku.js";
 
 export class BotClient extends Client {
     constructor(options) {
@@ -14,7 +14,7 @@ export class BotClient extends Client {
         this.config = config;
         this.cwd = process.cwd();
         this.logger = new Logger();
-        this.shoukaku = new Shoukaku(this);
+        this.shoukaku = new ShoukakuHandler(this);
         this.queue = new DispatcherManager(this);
 
         this.commands = new CommandManager(this, resolve(this.cwd, "src", "commands"));

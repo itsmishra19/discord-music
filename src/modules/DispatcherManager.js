@@ -31,11 +31,13 @@ export class DispatcherManager extends Map {
             });
         }
 
+        console.log(options.guild.id, options.voiceChannel.id, options.guild.shardId);
+
         if (!existing) {
             const player = await node.joinChannel({
                 guildId: options.guild.id,
                 channelId: options.voiceChannel.id,
-                shard: options.guild.shardId,
+                shardId: options.guild.shardId,
                 deaf: true
             }).catch(e => customError("SHOUKAKU_JOIN_CHANNEL", e));
 

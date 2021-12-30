@@ -1,6 +1,6 @@
-import { BaseEvent } from "../base/BaseEvent.js";
+import { BaseEvent } from "../../base/BaseEvent.js";
 
-export class ReadyEvent extends BaseEvent {
+export class PlayerStartEvent extends BaseEvent {
     constructor(client) {
         super(client, "playerTrackStart");
     }

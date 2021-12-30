@@ -1,4 +1,4 @@
-import { LOOP_STATE } from "../utils/constants";
+import { LOOP_STATE } from "../utils/constants.js";
 
 export class Queue extends Array {
     constructor() {

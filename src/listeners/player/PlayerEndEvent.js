@@ -18,6 +18,7 @@ export class PlayerEndEvent extends BaseEvent {
                     makeEmbed("error", "Finished playing")
                 ]
             });
+            await this.client.queue.destroy(payload.guildId);
         }
     }
 }

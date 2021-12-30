@@ -14,7 +14,7 @@ export class LoopCommand extends BaseCommand {
     }
 
     get connectionChecking() {
-        return { memberInVoice: true, dispatcherExists: true, memberInSameVoice: true };
+        return { memberInVoice: true, dispatcherExists: true, memberInSameVoice: true, isPlaying: true };
     }
 
     async execute(ctx) {

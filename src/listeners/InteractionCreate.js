@@ -45,6 +45,22 @@ export class InteractionCreate extends BaseEvent {
                             ]
                         });
                     }
+
+                    if (connectionChecking.isPlaying && !dispatcher.queue.current) {
+                        return interaction.reply({
+                            embeds: [
+                                makeEmbed("error", "There is nothing playing right now", true)
+                            ]
+                        });
+                    }
+
+                    if (connectionChecking.hasQueue && !dispatcher.queue.length) {
+                        return interaction.reply({
+                            embeds: [
+                                makeEmbed("error", "The queue is empty", true)
+                            ]
+                        });
+                    }
                 }
 
                 await interaction.deferReply();

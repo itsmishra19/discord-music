@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { makeEmbed } from "../utils/makeEmbed.js";
 import { customError } from "../utils/customError.js";
 import { Queue } from "./Queue.js";
@@ -41,10 +42,9 @@ export class DispatcherManager extends Map {
             const dispatcher = new Dispatcher(options, player);
             this.set(options.guild.id, dispatcher);
             return dispatcher;
-        } else {
-            existing.textChannel = options.textChannel;
-            return existing;
         }
+        existing.textChannel = options.textChannel;
+        return existing;
     }
 
     async destroy(guildId) {

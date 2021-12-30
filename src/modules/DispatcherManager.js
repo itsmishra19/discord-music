@@ -12,10 +12,11 @@ class Dispatcher {
         this.voiceChannel = options.voiceChannel;
         this.player = player;
         this.queue = new Queue();
-        this.tracks = TrackLoader(options.client);
+        this.tracks = new TrackLoader(options.client);
     }
 
     async play(options = { noReplace: false }) {
+        if (this.queue.length && !this.queue.current) this.queue.next();
         if (!this.queue.current) return null;
         return this.player?.playTrack(this.queue.current.track, options);
     }

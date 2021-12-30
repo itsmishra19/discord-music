@@ -16,4 +16,9 @@ export class Queue extends Array {
         Object.assign(this, { loopState: state });
         return this.loopState;
     }
+
+    next() {
+        this.current = this.shift();
+        return true;
+    }
 }

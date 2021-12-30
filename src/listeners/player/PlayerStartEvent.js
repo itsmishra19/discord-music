@@ -1,11 +1,20 @@
 import { BaseEvent } from "../../base/BaseEvent.js";
+import { makeEmbed } from "../../utils/makeEmbed.js";
 
 export class PlayerStartEvent extends BaseEvent {
     constructor(client) {
         super(client, "playerTrackStart");
     }
 
-    async execute(player, payload) {
-        console.log(player, payload);
+    async execute(_, payload) {
+        const dispatcher = this.client.queue.get(payload.guildId);
+
+        if (dispatcher) {
+            dispatcher?.textChannel?.send({
+                embeds: [
+                    makeEmbed("info", `Now Playing ${dispatcher.queue.current.info.title}`)
+                ]
+            });
+        }
     }
 }

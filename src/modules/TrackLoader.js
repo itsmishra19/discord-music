@@ -1,4 +1,4 @@
-import { makeEmbed } from "./makeEmbed.js";
+import { makeEmbed } from "../utils/makeEmbed.js";
 
 export class TrackLoader {
     constructor(client) {
@@ -20,7 +20,7 @@ export class TrackLoader {
                 ]
             });
         }
-        const response = node.rest.resolve(options.query, this.resolveSource(options.query));
+        const response = await node.rest.resolve(options.query, this.resolveSource(options.query)).catch(e => console.log(e));
 
         if (response.type === "NO_MATCHES" || !response.tracks.length) {
             return options.ctx.send({
@@ -48,9 +48,9 @@ export class TrackLoader {
             });
 
             dispatcher.queue.push(response.tracks[0]);
-
-            if (!wasPlaying && !dispatcher?.player.paused) await dispatcher.play();
         }
+
+        if (!wasPlaying && !dispatcher?.player.paused) await dispatcher.play();
     }
 
     resolveSource(query) {

@@ -12,7 +12,7 @@ class Dispatcher {
     }
 }
 
-export class DispatcherHandler extends Map {
+export class DispatcherManager extends Map {
     constructor(client, entries) {
         super(entries);
         this.client = client;

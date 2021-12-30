@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { BotClient } from "./structures/BotClient.js";
-import { customError } from "./utils/CustomError.js";
+import { customError } from "./utils/customError.js";
 import { Intents } from "discord.js";
 
 const clientOptions = {

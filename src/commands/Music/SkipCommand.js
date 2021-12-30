@@ -13,7 +13,7 @@ export class SkipCommand extends BaseCommand {
     }
 
     get connectionChecking() {
-        return { memberInVoice: true, dispatcherExists: true };
+        return { memberInVoice: true, dispatcherExists: true, memberInSameVoice: true };
     }
 
     async execute(ctx) {

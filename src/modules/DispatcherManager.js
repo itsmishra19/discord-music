@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-import { makeEmbed } from "../utils/makeEmbed.js";
 import { customError } from "../utils/customError.js";
 import { Queue } from "./Queue.js";
 import { TrackLoader } from "./TrackLoader.js";

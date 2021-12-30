@@ -1,4 +1,5 @@
 import { BaseEvent } from "../../base/BaseEvent.js";
+import { makeEmbed } from "../../utils/makeEmbed.js";
 
 export class PlayerEndEvent extends BaseEvent {
     constructor(client) {
@@ -11,6 +12,12 @@ export class PlayerEndEvent extends BaseEvent {
 
         if (dispatcher.queue.current) {
             await dispatcher.play();
+        } else {
+            dispatcher?.textChannel?.send({
+                embeds: [
+                    makeEmbed("error", "Finished playing")
+                ]
+            });
         }
     }
 }

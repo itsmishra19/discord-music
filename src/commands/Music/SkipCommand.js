@@ -21,7 +21,7 @@ export class SkipCommand extends BaseCommand {
 
         const track = dispatcher.queue.current;
 
-        await dispatcher.player.stop();
+        await dispatcher.player?.stopTrack();
 
         ctx.send({
             embeds: [

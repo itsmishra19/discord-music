@@ -14,7 +14,7 @@ export class NowPlayingCommand extends BaseCommand {
     }
 
     get connectionChecking() {
-        return { memberInVoice: true, dispatcherExists: true, memberInSameVoice: true, isPlaying: true };
+        return { memberInVoice: true, dispatcherExists: true, isPlaying: true };
     }
 
     async execute(ctx) {

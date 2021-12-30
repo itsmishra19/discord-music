@@ -8,5 +8,9 @@ export class PlayerEndEvent extends BaseEvent {
     async execute(_, payload) {
         const dispatcher = this.client.queue.get(payload.guildId);
         dispatcher.queue.next();
+
+        if (dispatcher.queue.current) {
+            await dispatcher.play();
+        }
     }
 }

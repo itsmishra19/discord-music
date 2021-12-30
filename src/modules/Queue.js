@@ -5,6 +5,7 @@ export class Queue extends Array {
         super();
 
         this.current = null;
+        this.previous = null;
         this.loopState = LOOP_STATE.DISABLED;
     }
 
@@ -18,6 +19,11 @@ export class Queue extends Array {
     }
 
     next() {
+        this.previous = this.current;
+
+        if (this.loopState === LOOP_STATE.SINGLE) this.unshift(this.previous);
+        if (this.loopState === LOOP_STATE.QUEUE) this.push(this.previous);
+
         this.current = this.shift();
         return true;
     }

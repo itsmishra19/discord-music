@@ -25,14 +25,24 @@ export class InteractionCreate extends BaseEvent {
                             ]
                         });
                     }
+
                     if (connectionChecking.dispatcherExists && !this.client.queue.has(interaction.guild.id)) {
                         return interaction.reply({
                             embeds: [
-                                makeEmbed("error", "No dispatcher exists for this server")
+                                makeEmbed("error", "No dispatcher exists for this server", true)
+                            ]
+                        });
+                    }
+
+                    if (connectionChecking.memberInSameVoice && interaction.member.voice.channelId !== this.client.queue.get(interaction.guild.id).voiceChannel.id) {
+                        return interaction.reply({
+                            embeds: [
+                                makeEmbed("error", "You must be in the same voice channel as me")
                             ]
                         });
                     }
                 }
+
                 await interaction.deferReply();
                 await cmd.execute(context);
             }

@@ -23,6 +23,10 @@ export class CommandContext {
         return this.context.options;
     }
 
+    get member() {
+        return this.context.member;
+    }
+
     send(options) {
         return this.context.editReply(options);
     }

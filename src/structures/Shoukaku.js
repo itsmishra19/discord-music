@@ -12,7 +12,7 @@ export class ShoukakuHandler extends Shoukaku {
         this.on("error", (name, error) => client.logger.error(customError("LAVALINK_ERR", error.message)));
         this.on("close", (name, code, reason) => client.logger.info(`[WS => ${name}] Connection has been closed with exit code: ${code}. Reason: ${reason || "Unknown"}`));
         if (client.config.isDev) {
-            this.on("debug", (name, reason) => client.logger.debug(`[WS => ${name}] ${reason || "No reason"}`));
+            this.on("debug", (name, reason) => client.logger.info(`[WS => ${name}] ${reason || "No reason"}`));
         }
     }
 }

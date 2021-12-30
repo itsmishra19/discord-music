@@ -20,7 +20,8 @@ export class JoinCommand extends BaseCommand {
         const dispatcher = await this.client.queue.create({
             guild: ctx.guild,
             voiceChannel: ctx.member.voice.channel,
-            textChannel: ctx.channel
+            textChannel: ctx.channel,
+            client: this.client
         });
 
         if (dispatcher?.voiceChannel) {

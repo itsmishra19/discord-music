@@ -2,14 +2,22 @@
 import { makeEmbed } from "../utils/makeEmbed.js";
 import { customError } from "../utils/customError.js";
 import { Queue } from "./Queue.js";
+import { TrackLoader } from "./TrackLoader.js";
 
 class Dispatcher {
     constructor(options, player) {
+        this.client = options.client;
         this.textChannel = options.textChannel;
         this.guild = options.guild;
         this.voiceChannel = options.voiceChannel;
         this.player = player;
         this.queue = new Queue();
+        this.tracks = TrackLoader(options.client);
+    }
+
+    async play(options = { noReplace: false }) {
+        if (!this.queue.current) return null;
+        return this.player?.playTrack(this.queue.current.track, options);
     }
 }
 
@@ -30,8 +38,6 @@ export class DispatcherManager extends Map {
                 ]
             });
         }
-
-        console.log(options.guild.id, options.voiceChannel.id, options.guild.shardId);
 
         if (!existing) {
             const player = await node.joinChannel({

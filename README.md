@@ -1,41 +1,28 @@
-# Discord-Music
+![Github Stars](https://img.shields.io/github/stars/redleague/discord-bot-template?style=for-the-badge&logo=appveyor)
+![GitHub issues](https://img.shields.io/github/issues-raw/redleague/discord-bot-template?style=for-the-badge&logo=appveyor)
 
-Discord Music is an open-source Discord music bot!
+# About
 
-## Discord Server
+An open-source discord-bot template which used Discord.js v13
 
-If you have any issue feel free to contact me on Discord (https://discord.gg/xuu6ytN)
+# Features 
 
-## Installation
+> ✅ Easy-to-use <br>
+> ✅ Stable <br>
+> ✅ Slash Commands <br>
+> ✅ Open Source
 
-Use the package manager [npm](https://npmjs.com) to install all the packages. Using `npm install`, will automatically install all the package needed. Make sure your node version is not below 12.
+# Installation
+Recommended version Node.js 16.6.x
 
-```bash
-npm install
-```
+> To install all the packages just use:
+> ```bash
+> npm install
+> ```
+# Run
 
-If you face any issues related to ffmpeg/avconv. Use:
-```bash
-npm install ffmpeg-static
-```
-
-## Configuration
-
-Go and edit in config/bot.json, make changes below to use it!
-
-```json
-{
-    "prefix": "Your Bot Prefix", 
-    "token_bot": "Your Discord Bot Token",
-    "youtube_api": "Your YouTube API Key"
-}
-
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update the tests as appropriate.
-
-## License
-[GNU](https://choosealicense.com/licenses/gpl-3.0/)
+> Note: Make sure to rename the .env_example file to .env and fill up the credentials
+> For running the bot:
+> ```bash
+> npm run start
+> ```

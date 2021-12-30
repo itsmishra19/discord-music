@@ -32,14 +32,6 @@ export class DispatcherManager extends Map {
         const existing = this.get(options.guild.id);
         const node = this.client.shoukaku.getNode();
 
-        if (!node) {
-            return options.textChannel.send({
-                embeds: [
-                    makeEmbed("error", "No lavalink node is available")
-                ]
-            });
-        }
-
         if (!existing) {
             const player = await node.joinChannel({
                 guildId: options.guild.id,
@@ -47,6 +39,8 @@ export class DispatcherManager extends Map {
                 shardId: options.guild.shardId,
                 deaf: true
             }).catch(e => customError("SHOUKAKU_JOIN_CHANNEL", e));
+
+            if (!player) return null;
 
             const dispatcher = new Dispatcher(options, player);
             this.set(options.guild.id, dispatcher);

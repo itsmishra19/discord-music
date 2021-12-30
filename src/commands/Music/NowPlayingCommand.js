@@ -26,8 +26,8 @@ export class NowPlayingCommand extends BaseCommand {
             embeds: [
                 makeEmbed("success", `Now Playing \`${currentTrack.info.title}\``)
                     .addFields(
-                        { name: "Author", value: currentTrack.info.author, inline: true },
-                        { name: "Duration", value: `\`${formatSeconds(currentTrack.info.length)}\`` }
+                        { name: "Author", value: `\`${currentTrack.info.author}\``, inline: true },
+                        { name: "Duration", value: `\`${formatSeconds(currentTrack.info.length)}\``, inline: true }
                     )
             ]
         });

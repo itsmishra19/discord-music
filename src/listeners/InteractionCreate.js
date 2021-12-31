@@ -38,7 +38,7 @@ export class InteractionCreate extends BaseEvent {
                         });
                     }
 
-                    if (connectionChecking.memberInSameVoice && dispatcher && memberVoiceChannelId === botVoiceChannelId) {
+                    if (connectionChecking.memberInSameVoice && dispatcher && memberVoiceChannelId !== botVoiceChannelId) {
                         return interaction.reply({
                             embeds: [
                                 makeEmbed("error", "You must be in the same voice channel as me!", true)

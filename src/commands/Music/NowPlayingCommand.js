@@ -1,6 +1,6 @@
 import { BaseCommand } from "../../base/BaseCommand.js";
 import { makeEmbed } from "../../utils/makeEmbed.js";
-import { formatSeconds } from "../../utils/formatSeconds.js";
+import { formatTime } from "../../utils/formatTime.js";
 
 export class NowPlayingCommand extends BaseCommand {
     constructor(client) {
@@ -27,7 +27,7 @@ export class NowPlayingCommand extends BaseCommand {
                 makeEmbed("success", `Now Playing \`${currentTrack.info.title}\``)
                     .addFields(
                         { name: "Author", value: `\`${currentTrack.info.author}\``, inline: true },
-                        { name: "Duration", value: `\`${formatSeconds(currentTrack.info.length)}\``, inline: true }
+                        { name: "Duration", value: `\`${formatTime(currentTrack.info.length)}\``, inline: true }
                     )
             ]
         });

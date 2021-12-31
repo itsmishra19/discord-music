@@ -1,41 +1,42 @@
-# Discord-Music
+![Github Stars](https://img.shields.io/github/stars/hydrox19/discord-music?style=for-the-badge&logo=appveyor)
+![GitHub issues](https://img.shields.io/github/issues-raw/hydrox19/discord-music?style=for-the-badge&logo=appveyor)
 
-Discord Music is an open-source Discord music bot!
+# About
 
-## Discord Server
+An open-source discord-music-bot wrriten in Javascript using Discord.js
 
-If you have any issue feel free to contact me on Discord (https://discord.gg/xuu6ytN)
+# Features 
 
-## Installation
+> ✅ Easy-to-use <br>
+> ✅ Stable <br>
+> ✅ Slash Commands <br>
+> ✅ Open Source
+> ✅ Good music commands
 
-Use the package manager [npm](https://npmjs.com) to install all the packages. Using `npm install`, will automatically install all the package needed. Make sure your node version is not below 12.
+# Installation
+Recommended version Node.js 16.6.x
 
-```bash
-npm install
-```
+> To install all the packages just use:
+> ```bash
+> npm install
+> ```
 
-If you face any issues related to ffmpeg/avconv. Use:
-```bash
-npm install ffmpeg-static
-```
+# Lavalink Installation
+> Host the instance of [Lavalink](https://github.com/freyacodes/Lavalink/tree/dev), You can download the binaries from the [CI Server](https://ci.fredboat.com/viewType.html?buildTypeId=Lavalink_Build&branch_Lavalink=refs%2Fheads%2Fdev&tab=buildTypeStatusDiv)
+> For running your lavalink you must install Java 13
+> And after installing run the lavalink server
+> ```bash
+> java -jar Lavalink.jar
+> ```
 
-## Configuration
+# Configuring lavalink credentials
+> For configuring the credentials checkout `.env_example` and rename it to `.env` instead
+> And fill your bot token
+> And for lavalink you can put your details there
 
-Go and edit in config/bot.json, make changes below to use it!
+# Run
 
-```json
-{
-    "prefix": "Your Bot Prefix", 
-    "token_bot": "Your Discord Bot Token",
-    "youtube_api": "Your YouTube API Key"
-}
-
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update the tests as appropriate.
-
-## License
-[GNU](https://choosealicense.com/licenses/gpl-3.0/)
+> For running the bot:
+> ```bash
+> npm run start
+> ```

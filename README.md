@@ -1,9 +1,9 @@
-![Github Stars](https://img.shields.io/github/stars/redleague/discord-bot-template?style=for-the-badge&logo=appveyor)
-![GitHub issues](https://img.shields.io/github/issues-raw/redleague/discord-bot-template?style=for-the-badge&logo=appveyor)
+![Github Stars](https://img.shields.io/github/stars/hydrox19/discord-music?style=for-the-badge&logo=appveyor)
+![GitHub issues](https://img.shields.io/github/issues-raw/hydrox19/discord-music?style=for-the-badge&logo=appveyor)
 
 # About
 
-An open-source discord-bot template which used Discord.js v13
+An open-source discord-music-bot wrriten in Javascript using Discord.js
 
 # Features 
 
@@ -11,6 +11,7 @@ An open-source discord-bot template which used Discord.js v13
 > ✅ Stable <br>
 > ✅ Slash Commands <br>
 > ✅ Open Source
+> ✅ Good music commands
 
 # Installation
 Recommended version Node.js 16.6.x
@@ -19,9 +20,22 @@ Recommended version Node.js 16.6.x
 > ```bash
 > npm install
 > ```
+
+# Lavalink Installation
+> Host the instance of [Lavalink](https://github.com/freyacodes/Lavalink/tree/dev), You can download the binaries from the [CI Server](https://ci.fredboat.com/viewType.html?buildTypeId=Lavalink_Build&branch_Lavalink=refs%2Fheads%2Fdev&tab=buildTypeStatusDiv)
+> For running your lavalink you must install Java 13
+> And after installing run the lavalink server
+> ```bash
+> java -jar Lavalink.jar
+> ```
+
+# Configuring lavalink credentials
+> For configuring the credentials checkout `.env_example` and rename it to `.env` instead
+> And fill your bot token
+> And for lavalink you can put your details there
+
 # Run
 
-> Note: Make sure to rename the .env_example file to .env and fill up the credentials
 > For running the bot:
 > ```bash
 > npm run start

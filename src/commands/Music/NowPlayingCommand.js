@@ -6,7 +6,7 @@ export class NowPlayingCommand extends BaseCommand {
     constructor(client) {
         super(client, {
             slash: {
-                name: "np",
+                name: "nowplaying",
                 description: "Shows the current playing track"
             },
             category: "Music"
@@ -24,11 +24,12 @@ export class NowPlayingCommand extends BaseCommand {
 
         ctx.send({
             embeds: [
-                makeEmbed("success", `Now Playing \`${currentTrack.info.title}\``)
+                makeEmbed("success", `\`${currentTrack.info.title}\``)
                     .addFields(
                         { name: "Author", value: `\`${currentTrack.info.author}\``, inline: true },
                         { name: "Duration", value: `\`${formatTime(currentTrack.info.length)}\``, inline: true }
                     )
+                    .setTitle("Now Playing")
             ]
         });
     }

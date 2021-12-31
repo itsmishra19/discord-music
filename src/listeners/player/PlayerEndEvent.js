@@ -15,7 +15,7 @@ export class PlayerEndEvent extends BaseEvent {
         } else {
             dispatcher?.textChannel?.send({
                 embeds: [
-                    makeEmbed("error", "Finished playing")
+                    makeEmbed("error", "No more tracks to play leaving the voice channel")
                 ]
             });
             await this.client.queue.destroy(payload.guildId);

@@ -1,3 +1,5 @@
+import { nodes } from "../lavalink-config.js";
+
 /* eslint-disable no-undef */
 export const config = {
     token: process.env.TOKEN,
@@ -11,6 +13,6 @@ export const config = {
             resumable: true,
             resumableTimeout: 30
         },
-        servers: JSON.parse(process.env.NODES ?? [])
+        servers: nodes
     }
 };

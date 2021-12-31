@@ -29,10 +29,11 @@ Recommended version Node.js 16.6.x
 > java -jar Lavalink.jar
 > ```
 
-# Configuring lavalink credentials
+# Configuring credentials
 > For configuring the credentials checkout `.env_example` and rename it to `.env` instead
 > And fill your bot token
-> And for lavalink you can put your details there
+> And for lavalink credentials rename `lavalink-config-example.js` to `lavalink-config.js`
+> After that put your lavalink details in there
 
 # Run
 

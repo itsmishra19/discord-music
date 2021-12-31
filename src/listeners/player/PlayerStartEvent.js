@@ -12,7 +12,7 @@ export class PlayerStartEvent extends BaseEvent {
         if (dispatcher) {
             dispatcher?.textChannel?.send({
                 embeds: [
-                    makeEmbed("info", `Now Playing ${dispatcher.queue.current.info.title}`)
+                    makeEmbed("info", `\`${dispatcher.queue.current.info.title}\``).setTitle("Now Playing")
                 ]
             });
         }

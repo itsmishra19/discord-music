@@ -10,7 +10,7 @@ An open-source discord-music-bot wrriten in Javascript using Discord.js
 > ✅ Easy-to-use <br>
 > ✅ Stable <br>
 > ✅ Slash Commands <br>
-> ✅ Open Source
+> ✅ Open Source <br>
 > ✅ Good music commands
 
 # Installation

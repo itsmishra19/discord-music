@@ -23,7 +23,7 @@
     "license": "MIT",
     "dependencies": {
         "discord.js": "^13.5.0",
-        "dotenv": "^10.0.0",
+        "dotenv": "^14.3.2",
         "shoukaku": "^2.1.4"
     },
     "devDependencies": {

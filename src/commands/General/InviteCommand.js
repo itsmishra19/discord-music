@@ -2,7 +2,7 @@ import { BaseCommand } from "../../base/BaseCommand.js";
 import { makeEmbed } from "../../utils/makeEmbed.js";
 import { MessageActionRow, MessageButton } from "discord.js";
 
-export class InvigeCommand extends BaseCommand {
+export class InviteCommand extends BaseCommand {
     constructor(client) {
         super(client, {
             slash: {

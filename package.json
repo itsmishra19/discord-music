@@ -28,7 +28,7 @@
     },
     "devDependencies": {
         "@hazmi35/eslint-config": "^7.0.1",
-        "eslint": "^8.5.0",
+        "eslint": "^8.11.0",
         "eslint-plugin-import": "^2.25.2"
     }
 }

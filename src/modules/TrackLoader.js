@@ -30,7 +30,7 @@ export class TrackLoader {
             });
         }
 
-        if (response.type === "PLAYLIST") {
+        if (response.loadType === "PLAYLIST_LOADED") {
             for (const track of response.tracks) {
                 dispatcher.queue.push(track);
             }
@@ -55,7 +55,7 @@ export class TrackLoader {
 
     resolveSource(query) {
         if (this.isValidURL(query)) return null;
-        return "youtube";
+        return "ytsearch";
     }
 
     isValidURL(query) {

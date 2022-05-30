@@ -1,5 +1,5 @@
 import pkg from "shoukaku";
-const { Connectors , Shoukaku } = pkg;
+const { Connectors, Shoukaku } = pkg;
 import { resolve } from "path";
 import { customError } from "../utils/customError.js";
 import { EventManager } from "../modules/EventManager.js";

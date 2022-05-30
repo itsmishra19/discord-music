@@ -6,7 +6,7 @@ import { EventManager } from "../modules/EventManager.js";
 
 export class ShoukakuHandler extends Shoukaku {
     constructor(client) {
-        super(new Connectors .DiscordJS(client), client.config.lavalink.servers, client.config.lavalink.options);
+        super(new Connectors.DiscordJS(client), client.config.lavalink.servers, client.config.lavalink.options);
         this.events = new EventManager(client, this, resolve(client.cwd, "src", "listeners", "player")).load();
         this.on("ready", (name, resumed) => client.logger.info(`${name} is now connected. ${resumed ? "[reconnected]" : ""}`));
         this.on("error", (name, error) => client.logger.error(customError("LAVALINK_ERR", error.message)));

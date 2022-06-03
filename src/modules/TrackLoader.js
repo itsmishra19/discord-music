@@ -20,7 +20,7 @@ export class TrackLoader {
                 ]
             });
         }
-        const response = await node.rest.resolve(options.query, this.resolveSource(options.query)).catch(e => console.log(e));
+        const response = await node.rest.resolve(this.resolveSource(options.query)).catch(e => console.log(e));
 
         if (response.type === "NO_MATCHES" || !response.tracks.length) {
             return options.ctx.send({
@@ -30,7 +30,7 @@ export class TrackLoader {
             });
         }
 
-        if (response.type === "PLAYLIST") {
+        if (response.loadType === "PLAYLIST_LOADED") {
             for (const track of response.tracks) {
                 dispatcher.queue.push(track);
             }
@@ -55,7 +55,7 @@ export class TrackLoader {
 
     resolveSource(query) {
         if (this.isValidURL(query)) return null;
-        return "youtube";
+        return `ytsearch:${query}`;
     }
 
     isValidURL(query) {

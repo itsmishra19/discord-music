@@ -22,9 +22,9 @@
     "author": "Rajat Mishra",
     "license": "MIT",
     "dependencies": {
-        "discord.js": "^13.5.0",
+        "discord.js": "^13.7.0",
         "dotenv": "^10.0.0",
-        "shoukaku": "^2.1.4"
+        "shoukaku": "^3.0.5"
     },
     "devDependencies": {
         "@hazmi35/eslint-config": "^7.0.1",

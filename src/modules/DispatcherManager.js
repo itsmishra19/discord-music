@@ -17,7 +17,7 @@ class Dispatcher {
     async play(options = { noReplace: false }) {
         if (this.queue.length && !this.queue.current) this.queue.next();
         if (!this.queue.current) return null;
-        return this.player?.playTrack(this.queue.current.track, options);
+        return this.player?.playTrack({ track: this.queue.current.track }, options).setVolume(0.3);
     }
 }
 

@@ -11,6 +11,7 @@ export const config = {
             reconnectTries: 2,
             restTimeout: 10000,
             resumable: true,
+            resumableKey: 'discord-music',
             resumableTimeout: 30
         },
         servers: nodes

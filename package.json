@@ -27,7 +27,7 @@
         "shoukaku": "^3.0.5"
     },
     "devDependencies": {
-        "@hazmi35/eslint-config": "^7.0.1",
+        "@hazmi35/eslint-config": "^8.4.2",
         "eslint": "^8.5.0",
         "eslint-plugin-import": "^2.25.2"
     }

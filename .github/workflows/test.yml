@@ -60,4 +60,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Test compile
-        run: pnpm run compile && rm -rf dist
+        run: pnpm run build && rm -rf dist

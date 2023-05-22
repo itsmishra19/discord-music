@@ -1,0 +1,67 @@
+{
+  "name": "discord-music",
+  "version": "2.0.0",
+  "description": "A cool discord music bot written in typescript",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "pnpm lint && pnpm build && node dist/main.js",
+    "build": "tsc",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --fix --ext ts"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "@hazmi35/eslint-config/typescript"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "class-methods-use-this": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/naming-convention": "off",
+      "multiline-comment-style": "off"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmishra19/discord-music.git"
+  },
+  "packageManager": "pnpm@8.2.0",
+  "keywords": [
+    "discord",
+    "music",
+    "typescript",
+    "discordbot",
+    "bot",
+    "musicbot"
+  ],
+  "author": "Rajat Mishra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsmishra19/discord-music/issues"
+  },
+  "homepage": "https://github.com/itsmishra19/discord-music#readme",
+  "dependencies": {
+    "discord.js": "^14.11.0"
+  },
+  "devDependencies": {
+    "@hazmi35/eslint-config": "^9.0.0",
+    "@types/node": "^20.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "dotenv": "^16.0.3"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^6.0.3",
+    "zlib-sync": "^0.1.8"
+  }
+}

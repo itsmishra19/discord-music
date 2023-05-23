@@ -1,34 +1,78 @@
 {
-    "name": "discord-bot-template",
-    "version": "3.2.0",
-    "type": "module",
-    "description": "An open-source discord bot template",
-    "scripts": {
-        "app": "node src/index.js",
-        "start": "npm run lint && npm run app",
-        "lint": "eslint .",
-        "lint:fix": "eslint . --fix"
+  "name": "discord-music",
+  "version": "2.0.0",
+  "description": "A cool discord music bot written in typescript",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "pnpm lint && pnpm build && node dist/main.js",
+    "build": "tsc",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --fix --ext ts"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
     },
-    "eslintConfig": {
-        "extends": "@hazmi35/eslint-config/node",
-        "parserOptions": {
-            "sourceType": "module"
-        }
-    },
-    "engines": {
-        "node": ">=16.6.x",
-        "npm": ">=7.x.x"
-    },
-    "author": "Rajat Mishra",
-    "license": "MIT",
-    "dependencies": {
-        "discord.js": "^13.7.0",
-        "dotenv": "^10.0.0",
-        "shoukaku": "^3.0.5"
-    },
-    "devDependencies": {
-        "@hazmi35/eslint-config": "^7.0.1",
-        "eslint": "^8.5.0",
-        "eslint-plugin-import": "^2.25.2"
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "@hazmi35/eslint-config/typescript"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "class-methods-use-this": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/naming-convention": "off",
+      "multiline-comment-style": "off"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmishra19/discord-music.git"
+  },
+  "packageManager": "pnpm@8.2.0",
+  "keywords": [
+    "discord",
+    "music",
+    "typescript",
+    "discordbot",
+    "bot",
+    "musicbot"
+  ],
+  "author": "Rajat Mishra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsmishra19/discord-music/issues"
+  },
+  "homepage": "https://github.com/itsmishra19/discord-music#readme",
+  "dependencies": {
+    "@sapphire/decorators": "^6.0.1",
+    "@sapphire/discord.js-utilities": "^6.1.0",
+    "@sapphire/framework": "^4.4.3",
+    "@sapphire/plugin-editable-commands": "^3.0.2",
+    "@sapphire/result": "^2.6.4",
+    "@sapphire/type": "^2.4.0",
+    "@sapphire/utilities": "^3.11.2",
+    "@skyra/env-utilities": "^1.2.0",
+    "color": "^4.2.3",
+    "discord.js": "^14.11.0",
+    "pretty-ms": "^8.0.0",
+    "undici": "^5.22.1"
+  },
+  "devDependencies": {
+    "@hazmi35/eslint-config": "^9.0.0",
+    "@types/node": "^20.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "dotenv": "^16.0.3"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^6.0.3",
+    "zlib-sync": "^0.1.8"
+  }
 }

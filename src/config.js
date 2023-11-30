@@ -4,7 +4,6 @@ import { nodes } from "../lavalink-config.js";
 export const config = {
     token: process.env.TOKEN,
     isDev: true,
-    devGuilds: ["516073932009242624"],
     lavalink: {
         options: {
             moveOnDisconnect: false,
